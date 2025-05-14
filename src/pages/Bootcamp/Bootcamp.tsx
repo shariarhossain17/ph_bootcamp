@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Milestone from "../../components/Milestone";
 import Navbar from "../../components/Navbar";
+import { useVideoNavigation } from "../../hooks/useNavigation";
 import { courseData } from "../../lib/data";
 
 const Bootcamp = () => {
@@ -8,14 +9,18 @@ const Bootcamp = () => {
 
   const [expandedMilestones, setExpandedMilestones] = useState<
     Record<string, boolean>
-  >({
-    "milestone-1": true,
-  });
+  >({});
 
   const [expandedModules, setExpandedModules] = useState<
     Record<string, boolean>
-  >({
-    "module-1-1": true,
+  >({});
+
+  const { handlePrevious, handleNext } = useVideoNavigation({
+    courseData,
+    activeVideo,
+    setActiveVideo,
+    setExpandedModules,
+    setExpandedMilestones,
   });
 
   const toggleMilestone = (id: string) => {
@@ -34,95 +39,6 @@ const Bootcamp = () => {
 
   const handleVideoClick = (youtubeId: string) => {
     setActiveVideo(youtubeId);
-  };
-
-  const findCurrentVideoInfo = () => {
-    for (const milestone of courseData) {
-      for (const module of milestone.modules) {
-        const videoIndex = module.videos.findIndex(
-          (video) => video.youtubeId === activeVideo
-        );
-        if (videoIndex !== -1) {
-          return {
-            milestoneId: milestone.id,
-            moduleId: module.id,
-            videoIndex,
-            module,
-            videos: module.videos,
-          };
-        }
-      }
-    }
-    return null;
-  };
-
-  const handlePrevious = () => {
-    const currentInfo = findCurrentVideoInfo();
-    if (!currentInfo) return;
-
-    const { videoIndex, module, moduleId, milestoneId } = currentInfo;
-
-    if (videoIndex > 0) {
-      setActiveVideo(module.videos[videoIndex - 1].youtubeId);
-      return;
-    }
-
-    const milestoneIndex = courseData.findIndex((m) => m.id === milestoneId);
-    const moduleIndex = courseData[milestoneIndex].modules.findIndex(
-      (m) => m.id === moduleId
-    );
-
-    if (moduleIndex > 0) {
-      const prevModule = courseData[milestoneIndex].modules[moduleIndex - 1];
-      const lastVideo = prevModule.videos[prevModule.videos.length - 1];
-      setActiveVideo(lastVideo.youtubeId);
-      setExpandedModules((prev) => ({ ...prev, [prevModule.id]: true }));
-      return;
-    }
-
-    if (milestoneIndex > 0) {
-      const prevMilestone = courseData[milestoneIndex - 1];
-      const lastModule =
-        prevMilestone.modules[prevMilestone.modules.length - 1];
-      const lastVideo = lastModule.videos[lastModule.videos.length - 1];
-      setActiveVideo(lastVideo.youtubeId);
-      setExpandedMilestones((prev) => ({ ...prev, [prevMilestone.id]: true }));
-      setExpandedModules((prev) => ({ ...prev, [lastModule.id]: true }));
-    }
-  };
-
-  const handleNext = () => {
-    const currentInfo = findCurrentVideoInfo();
-    if (!currentInfo) return;
-
-    const { videoIndex, module, moduleId, milestoneId } = currentInfo;
-
-    if (videoIndex < module.videos.length - 1) {
-      setActiveVideo(module.videos[videoIndex + 1].youtubeId);
-      return;
-    }
-
-    const milestoneIndex = courseData.findIndex((m) => m.id === milestoneId);
-    const moduleIndex = courseData[milestoneIndex].modules.findIndex(
-      (m) => m.id === moduleId
-    );
-
-    if (moduleIndex < courseData[milestoneIndex].modules.length - 1) {
-      const nextModule = courseData[milestoneIndex].modules[moduleIndex + 1];
-      const firstVideo = nextModule.videos[0];
-      setActiveVideo(firstVideo.youtubeId);
-      setExpandedModules((prev) => ({ ...prev, [nextModule.id]: true }));
-      return;
-    }
-
-    if (milestoneIndex < courseData.length - 1) {
-      const nextMilestone = courseData[milestoneIndex + 1];
-      const firstModule = nextMilestone.modules[0];
-      const firstVideo = firstModule.videos[0];
-      setActiveVideo(firstVideo.youtubeId);
-      setExpandedMilestones((prev) => ({ ...prev, [nextMilestone.id]: true }));
-      setExpandedModules((prev) => ({ ...prev, [firstModule.id]: true }));
-    }
   };
 
   return (
