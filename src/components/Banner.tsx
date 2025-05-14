@@ -11,21 +11,21 @@ const Banner = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-pink-100 via-purple-50 to-white"></div>
 
       {/* Left side icons*/}
-      <div className="absolute left-16 md:left-16 top-1/4 animate-pulse ">
+      <div className="absolute left-16 md:left-16 top-1/4 animate-pulse lg:left-[330px]">
         <img className="w-12 h-12 opacity-80" src={htmlIcon2} alt="" />
       </div>
-      <div className="absolute left-8 md:left-24 top-1/2 animate-bounce">
+      <div className="absolute left-8 md:left-24 top-1/2 animate-bounce lg:left-[475px]">
         <img className="w-12 h-12 opacity-80" src={htmlIcon} alt="" />
       </div>
-      <div className="absolute left-2 md:left-12 bottom-1/4 animate-pulse">
+      <div className="absolute left-2 md:left-12 md:bottom-1/4  animate-pulse lg:left-[330px]">
         <img className="w-12 h-12 opacity-80" src={cssIcon} alt="" />
       </div>
 
       {/* Right side icons*/}
-      <div className="absolute right-4 md:right-16 top-1/3 animate-pulse">
+      <div className="absolute right-4 md:right-16 top-1/3 animate-pulse lg:right-[400px]">
         <img className="w-12 h-12 opacity-80" src={jsIcon} alt="" />
       </div>
-      <div className="absolute right-8 md:right-24 bottom-1/3 animate-bounce">
+      <div className="absolute right-8 md:right-24 bottom-1/3 animate-bounce lg:right-[500px]">
         <img className="w-12 h-12 opacity-80" src={cssIcon2} alt="" />
       </div>
       <div className="relative z-10 container mx-auto px-4 py-12">

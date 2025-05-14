@@ -3,7 +3,7 @@ import logo from "../assets/logo/PH-Logo-Dark.png";
 
 const Navbar = () => {
   return (
-    <div className="px-12 py-4">
+    <div className="px-12 py-4 sticky top-0 z-50">
       <nav className="flex items-center justify-between">
         <div>
           <img className="w-[207px]" src={logo} alt="" />
