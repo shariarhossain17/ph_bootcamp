@@ -7,7 +7,6 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
-import { Link } from "react-router";
 
 import logo from "../assets/logo/PH-Logo-White.png";
 
@@ -20,7 +19,7 @@ const Footer = () => {
             {/* Logo and Contact Info */}
             <div className="space-y-6">
               <div className="flex items-center space-x-2">
-                <img className="w-[207px]" src={logo} alt="" />
+                <img className="w-[207px]" src={logo} alt="Logo" />
               </div>
 
               <div className="space-y-3 text-gray-200">
@@ -68,52 +67,34 @@ const Footer = () => {
               <h3 className="text-lg font-medium mb-4">লিঙ্কসমূহ</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/about"
+                  <a
+                    href="https://www.programming-hero.com/about-us"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-200 hover:text-pink-300 transition"
                   >
                     আমাদের সম্পর্কে
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to="/courses"
+                  <a
+                    href="https://web.programming-hero.com/course-details"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-200 hover:text-pink-300 transition"
                   >
                     আমাদের কোর্স
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to="/blog"
+                  <a
+                    href="https://learn.programming-hero.com/blog/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-200 hover:text-pink-300 transition"
                   >
                     ব্লগ পড়ুন
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/refund-policy"
-                    className="text-gray-200 hover:text-pink-300 transition"
-                  >
-                    রিফান্ড নীতি
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/copyright-policy"
-                    className="text-gray-200 hover:text-pink-300 transition"
-                  >
-                    কোপাইরাইট নীতি
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/partnership"
-                    className="text-gray-200 hover:text-pink-300 transition"
-                  >
-                    সহযোগিতা
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -124,7 +105,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/programmingHero/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-200 hover:text-pink-300 transition"
@@ -135,7 +116,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/programminghero/?hl=en"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-200 hover:text-pink-300 transition"
@@ -146,7 +127,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://youtube.com"
+                    href="https://www.youtube.com/c/ProgrammingHero"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-200 hover:text-pink-300 transition"
@@ -157,7 +138,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/programminghero/posts/?feedView=all"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-200 hover:text-pink-300 transition"
@@ -175,7 +156,12 @@ const Footer = () => {
                 আমার অ্যাপটি ডাউনলোড করুন
               </h3>
               <div className="space-y-3">
-                <a href="#" className="block" target="_blank" rel="noreferrer">
+                <a
+                  href="https://apps.apple.com/us/app/programming-hero-coding-fun/id1478201849"
+                  className="block"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <div className="bg-black rounded-lg p-2 flex items-center space-x-2 hover:bg-gray-900 transition">
                     <div className="w-8 h-8 flex items-center justify-center">
                       <svg
@@ -198,7 +184,12 @@ const Footer = () => {
                   </div>
                 </a>
 
-                <a href="#" className="block" target="_blank" rel="noreferrer">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.learnprogramming.codecamp&hl=en"
+                  className="block"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <div className="bg-black rounded-lg p-2 flex items-center space-x-2 hover:bg-gray-900 transition">
                     <div className="w-8 h-8 flex items-center justify-center">
                       <svg
@@ -215,27 +206,6 @@ const Footer = () => {
                     <div>
                       <div className="text-xs text-gray-400">GET IT ON</div>
                       <div className="text-sm font-semibold">Google Play</div>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="#" className="block" target="_blank" rel="noreferrer">
-                  <div className="bg-black rounded-lg p-2 flex items-center space-x-2 hover:bg-gray-900 transition">
-                    <div className="w-8 h-8 flex items-center justify-center">
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="w-6 h-6 text-white"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M11.5 12.5H14V14H11.5V16.5H10V14H7.5V12.5H10V10H11.5V12.5M21 3V21H3V3H21M16.56 4H7.44L7.5 4.06V4.12L7.44 19.94H16.56L16.5 4.12V4.06L16.56 4Z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-400">Download from</div>
-                      <div className="text-sm font-semibold">Microsoft</div>
                     </div>
                   </div>
                 </a>

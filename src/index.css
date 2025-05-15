@@ -1,2 +1,30 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&family=Sora:wght@100..800&display=swap");
+
+@font-face {
+  font-family: "AdorNoirrit";
+  src: url("/fonts/Li-Ador-Noirrit-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AdorNoirrit";
+  src: url("/fonts/Li-Ador-Noirrit-Bold-Italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AdorNoirrit";
+  src: url("/fonts/Li-Ador-Noirrit-A-V1-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AdorNoirrit";
+  src: url("/fonts/Li-Ador-Noirrit-A-V1-Light.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.custom-ador-font {
+  font-family: "AdorNoirrit", sans-serif;
+}

@@ -23,7 +23,7 @@ const Milestone: React.FC<Props> = ({
   activeVideo,
 }) => {
   return (
-    <div className="mb-4 bg-[#181021] rounded-[20px] mt-4">
+    <div className="mb-4 bg-[#151922] rounded-[20px] mt-4">
       <button
         onClick={() => toggleMilestone(milestone.id)}
         className="flex items-center justify-between w-full p-4 text-left hover:bg-zinc-800/50"

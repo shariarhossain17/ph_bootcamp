@@ -1,3 +1,5 @@
+import Marquee from "react-fast-marquee";
+import { Link } from "react-router";
 import banner from "../assets/banner/thumbnail.jpg";
 import cssIcon from "../assets/logo/icons8-css-24.png";
 import cssIcon2 from "../assets/logo/icons8-css-64.png";
@@ -14,7 +16,7 @@ const Banner = () => {
       <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Heading */}
-          <h1 className="text-4xl font-bold mb-6">
+          <h1 className="text-4xl font-bold mb-6  ">
             <span className="bg-gradient-to-r from-[rgba(232,85,222,1)] to-[rgba(84,0,238,1)] text-transparent bg-clip-text">
               ওয়েব ডেভেলপমেন্ট
             </span>{" "}
@@ -23,10 +25,18 @@ const Banner = () => {
             </span>
           </h1>
 
+          <Marquee className="text-[#262C33]AdorNoirrit.ttfAdorNoirrit.ttf">
+            প্রোগ্রামিং ওয়েব ডেভেলপমেন্ট বুটক্যাম্পর ১২ তম ব্যাচের ইনরোলমেন্ট
+            শুরু ১০ই জুন থেকে এবং ইনরোলমেন্ট শেষ ২৪ ই জুন রাত ১১ টা ৫৯ মিনিটে
+          </Marquee>
+
           {/* Join Button */}
-          <button className="px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 text-white font-medium hover:opacity-90 transition-opacity">
+          <Link
+            to="/bootcamp"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-orange-400 text-white font-medium hover:opacity-90 transition-opacity mt-5"
+          >
             এখনই জয়েন করো
-          </button>
+          </Link>
 
           <div className="mt-12 relative bg-white rounded-lg p-4 shadow-lg max-w-3xl mx-auto hidden md:block">
             {/* Left Side Icons with custom gaps */}

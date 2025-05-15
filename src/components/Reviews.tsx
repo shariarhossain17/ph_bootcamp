@@ -141,11 +141,14 @@ const Reviews = () => {
           </button>
         </div>
 
-        <div className="flex justify-center mt-10">
+        <a
+          href="https://www.youtube.com/playlist?list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_"
+          className="flex justify-center mt-10 cursor-pointer"
+        >
           <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 rounded-full text-white font-medium hover:from-purple-700 hover:to-purple-900 transition-colors">
             আরো সকসেস দেখুন
           </button>
-        </div>
+        </a>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Success from "../../components/Success";
 
 const Home = () => {
   return (
-    <div>
+    <div className="custom-ador-font">
       <Navbar />
       <Banner />
       <Success />

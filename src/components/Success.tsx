@@ -4,7 +4,7 @@ const Success = () => {
     <div>
       <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 justify-center items-center py-32 ">
         {/* First Card  */}
-        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm w-[340px] h-[172px]">
+        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm w-[350px] h-[172px]">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-teal-400 flex items-center justify-center relative">
               <Globe className="w-6 h-6 text-white" />
@@ -19,7 +19,7 @@ const Success = () => {
         </div>
 
         {/* Second Card */}
-        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm  w-[340px] h-[172px]">
+        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm  w-[350px] h-[172px]">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center">
               <Building2 className="w-6 h-6 text-white" />
@@ -32,7 +32,7 @@ const Success = () => {
         </div>
 
         {/* Third Card */}
-        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm  w-[340px] h-[172px]">
+        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm  w-[350px] h-[172px]">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-400 to-orange-400 flex items-center justify-center">
               <Users className="w-6 h-6 text-white" />

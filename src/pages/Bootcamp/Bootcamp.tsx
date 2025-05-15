@@ -42,7 +42,7 @@ const Bootcamp = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col md:flex-row min-h-[92vh] bg-[#07020c] text-white px-4 md:px-12">
+      <div className="flex flex-col md:flex-row min-h-[92vh] bg-[#010127] text-white px-4 md:px-12">
         {/* Video Section */}
         <div className="flex-1 order-1 md:order-2 flex justify-center p-4 md:p-8">
           <div className="w-full md:w-full max-w-4xl ">
@@ -90,7 +90,7 @@ const Bootcamp = () => {
         </div>
 
         {/* Sidebar Section */}
-        <div className="w-full md:w-96 bg-[#10061f] border-t md:border-t-0 md:border-r border-zinc-800 order-2 md:order-1">
+        <div className="w-full md:w-96 bg-[#151922] border-t md:border-t-0 md:border-r border-zinc-800 order-2 md:order-1">
           <div className="p-4 border-b border-zinc-800">
             <h1 className="text-xl font-bold">Course Content</h1>
           </div>
