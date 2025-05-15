@@ -10,7 +10,7 @@ type Props = {
   handleVideoClick: (youtubeId: string) => void;
   expandedMilestones: Record<string, boolean>;
   expandedModules: Record<string, boolean>;
-  activeVideo: string;
+  activeVideo: string | null;
 };
 
 const Milestone: React.FC<Props> = ({

@@ -2,8 +2,8 @@ import { Building2, Globe, Users } from "lucide-react";
 const Success = () => {
   return (
     <div>
-      <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 justify-center items-center">
-        {/* First Card - Globe */}
+      <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 justify-center items-center py-32 ">
+        {/* First Card  */}
         <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-teal-400 flex items-center justify-center relative">
@@ -18,7 +18,7 @@ const Success = () => {
           </div>
         </div>
 
-        {/* Second Card - Building */}
+        {/* Second Card */}
         <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center">
@@ -29,7 +29,7 @@ const Success = () => {
           <div className="text-gray-700 mt-1 text-center">কোম্পানি যুক্ত</div>
         </div>
 
-        {/* Third Card - Users */}
+        {/* Third Card */}
         <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-400 to-orange-400 flex items-center justify-center">

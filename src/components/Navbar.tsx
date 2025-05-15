@@ -3,11 +3,11 @@ import logo from "../assets/logo/PH-Logo-Dark.png";
 
 const Navbar = () => {
   return (
-    <div className="px-12 py-4 sticky top-0 z-50">
+    <div className="px-6 md:px-12 py-4 sticky top-0 z-50">
       <nav className="flex items-center justify-between">
         <div>
           <Link to="/">
-            <img className="w-[207px]" src={logo} alt="" />
+            <img className="w-[100px] md:w-[207px]" src={logo} alt="" />
           </Link>
         </div>
         <div className="flex gap-6 items-center">

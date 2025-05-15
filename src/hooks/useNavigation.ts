@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-
 import type { MilestoneData } from "../lib/interface";
 import { findCurrentVideoInfo } from "../lib/videoNavigation";
 
@@ -40,7 +39,7 @@ export const useVideoNavigation = ({
 
     if (moduleIndex > 0) {
       const prevModule = courseData[milestoneIndex].modules[moduleIndex - 1];
-      const lastVideo = prevModule.videos.at(-1);
+      const lastVideo = prevModule.videos[prevModule.videos.length - 1];
       if (lastVideo) {
         setActiveVideo(lastVideo.youtubeId);
         setExpandedModules((prev) => ({ ...prev, [prevModule.id]: true }));
@@ -50,8 +49,9 @@ export const useVideoNavigation = ({
 
     if (milestoneIndex > 0) {
       const prevMilestone = courseData[milestoneIndex - 1];
-      const lastModule = prevMilestone.modules.at(-1);
-      const lastVideo = lastModule?.videos.at(-1);
+      const lastModule =
+        prevMilestone.modules[prevMilestone.modules.length - 1];
+      const lastVideo = lastModule?.videos[lastModule.videos.length - 1];
       if (lastVideo && lastModule) {
         setActiveVideo(lastVideo.youtubeId);
         setExpandedMilestones((prev) => ({

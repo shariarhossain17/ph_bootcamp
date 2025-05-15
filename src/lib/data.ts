@@ -1,3 +1,5 @@
+import type { Testimonial } from "./interface";
+
 export const courseData = [
   {
     id: "milestone-1",
@@ -95,5 +97,79 @@ export const courseData = [
         ],
       },
     ],
+  },
+];
+//reviews data
+
+export const testimonials: Testimonial[] = [
+  {
+    id: "1",
+    name: "Tonmoy Sarkar",
+    title: "Senior Visualizer",
+    quote:
+      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
+    rating: 5,
+    image: "/placeholder.svg?height=300&width=300",
+    youtubeUrl: "https://www.youtube.com/watch?v=example1",
+  },
+  {
+    id: "2",
+    name: "Tonmoy Sarkar",
+    title: "Senior Visualizer",
+    quote:
+      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
+    rating: 5,
+    image: "/placeholder.svg?height=300&width=300",
+    youtubeUrl: "https://www.youtube.com/watch?v=example2",
+  },
+  {
+    id: "3",
+    name: "Tonmoy Sarkar",
+    title: "Senior Visualizer",
+    quote:
+      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
+    rating: 5,
+    image: "/placeholder.svg?height=300&width=300",
+    youtubeUrl: "https://www.youtube.com/watch?v=example3",
+  },
+  {
+    id: "4",
+    name: "Tonmoy Sarkar",
+    title: "Senior Visualizer",
+    quote:
+      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
+    rating: 5,
+    image: "/placeholder.svg?height=300&width=300",
+    youtubeUrl: "https://www.youtube.com/watch?v=example4",
+  },
+  {
+    id: "4",
+    name: "Tonmoy Sarkar",
+    title: "Senior Visualizer",
+    quote:
+      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
+    rating: 5,
+    image: "/placeholder.svg?height=300&width=300",
+    youtubeUrl: "https://www.youtube.com/watch?v=example4",
+  },
+  {
+    id: "4",
+    name: "Tonmoy Sarkar",
+    title: "Senior Visualizer",
+    quote:
+      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
+    rating: 5,
+    image: "/placeholder.svg?height=300&width=300",
+    youtubeUrl: "https://www.youtube.com/watch?v=example4",
+  },
+  {
+    id: "4",
+    name: "Tonmoy Sarkar",
+    title: "Senior Visualizer",
+    quote:
+      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
+    rating: 5,
+    image: "/placeholder.svg?height=300&width=300",
+    youtubeUrl: "https://www.youtube.com/watch?v=example4",
   },
 ];

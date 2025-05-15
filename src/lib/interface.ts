@@ -23,3 +23,12 @@ type Video = {
   completed: boolean;
   youtubeId: string;
 };
+export interface Testimonial {
+  id: string;
+  name: string;
+  title: string;
+  quote: string;
+  rating: number;
+  image: string;
+  youtubeUrl: string;
+}
