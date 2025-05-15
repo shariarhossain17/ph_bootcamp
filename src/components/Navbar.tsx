@@ -42,31 +42,37 @@ const Navbar = () => {
   );
 
   return (
-    <div className="px-6 md:px-12 py-4 sticky top-0 z-50 bg-white shadow custom-ador-font">
-      <nav className="flex items-center justify-between">
-        <div>
-          <Link to="/">
-            <img className="w-[100px] md:w-[207px]" src={logo} alt="PH Logo" />
-          </Link>
-        </div>
+    <div className="sticky top-0 z-50 bg-white shadow">
+      <div className="px-6 md:px-12 lg:px-16 py-4  custom-ador-font max-w-[1600px] mx-auto">
+        <nav className="flex items-center justify-between ">
+          <div>
+            <Link to="/">
+              <img
+                className="w-[100px] md:w-[207px]"
+                src={logo}
+                alt="PH Logo"
+              />
+            </Link>
+          </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex gap-6 items-center">{navLinks}</div>
+          {/* Desktop Links */}
+          <div className="hidden md:flex gap-6 items-center">{navLinks}</div>
 
-        {/* Mobile Hamburger Icon */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu}>
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </nav>
+          {/* Mobile Hamburger Icon */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu}>
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </nav>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden mt-4 flex flex-col gap-4 bg-white shadow p-4 rounded">
-          {navLinks}
-        </div>
-      )}
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 flex flex-col gap-4 bg-white shadow p-4 rounded">
+            {navLinks}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
