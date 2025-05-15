@@ -152,9 +152,7 @@ const Footer = () => {
 
             {/* App Download */}
             <div>
-              <h3 className="text-lg font-medium mb-4">
-                আমার অ্যাপটি ডাউনলোড করুন
-              </h3>
+              <h3 className="text-lg font-medium mb-4">আমাদের অ্যাপ</h3>
               <div className="space-y-3">
                 <a
                   href="https://apps.apple.com/us/app/programming-hero-coding-fun/id1478201849"
@@ -176,10 +174,10 @@ const Footer = () => {
                       </svg>
                     </div>
                     <div>
-                      <div className="text-xs text-gray-400">
+                      <div className="text-xs text-gray-400 ">
                         Download on the
                       </div>
-                      <div className="text-sm font-semibold">App Store</div>
+                      <div className="text-sm font-semibold ">App Store</div>
                     </div>
                   </div>
                 </a>
@@ -214,7 +212,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="mt-12 pt-6 border-t border-purple-800 text-center text-sm text-gray-300">
+          <div className="mt-12 pt-6 border-t border-purple-800 text-center text-sm text-gray-300 font-bold">
             © 2025 Programming Hero. All Rights Reserved. Developed By SHAHRIAR
           </div>
         </div>

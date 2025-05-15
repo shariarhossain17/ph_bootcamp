@@ -146,7 +146,7 @@ const Reviews = () => {
           className="flex justify-center mt-10 cursor-pointer"
         >
           <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 rounded-full text-white font-medium hover:from-purple-700 hover:to-purple-900 transition-colors">
-            আরো সকসেস দেখুন
+            আরো সাকসেস দেখুন
           </button>
         </a>
       </div>

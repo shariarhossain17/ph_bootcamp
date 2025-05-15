@@ -12,7 +12,7 @@ const Success = () => {
               <div className="absolute w-2 h-2 bg-red-500 rounded-full bottom-2 left-0 border border-white"></div>
             </div>
           </div>
-          <div className="text-5xl font-bold text-teal-400">8,600+</div>
+          <div className="text-5xl font-bold text-teal-400">৮৬০০+</div>
           <div className="text-gray-700 mt-1 text-center">
             জব প্লেসমেন্ট বিশ্বব্যাপি
           </div>
@@ -25,7 +25,7 @@ const Success = () => {
               <Building2 className="w-6 h-6 text-white" />
             </div>
           </div>
-          <div className="text-5xl font-bold text-blue-400">2,280+</div>
+          <div className="text-5xl font-bold text-blue-400">২২৮০+</div>
           <div className="text-gray-700 mt-1 text-center">
             পার্টনার কোম্পানি
           </div>
@@ -39,7 +39,7 @@ const Success = () => {
             </div>
           </div>
           <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-orange-400">
-            86+
+            ৮৬+
           </div>
           <div className="text-gray-700 mt-1 text-center">
             ডেডিকেটেড সাপোর্ট মেম্বার
