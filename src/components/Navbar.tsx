@@ -42,7 +42,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="px-6 md:px-12 py-4 sticky top-0 z-50 bg-white shadow">
+    <div className="px-6 md:px-12 py-4 sticky top-0 z-50 bg-white shadow custom-ador-font">
       <nav className="flex items-center justify-between">
         <div>
           <Link to="/">
