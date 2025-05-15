@@ -1,7 +1,8 @@
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { testimonials } from "../lib/data";
-import { cn } from "../lib/utils";
+
+const API_KEY = "AIzaSyBp7konpZH5jUEnlbPhmoTuGt9JJ3_XzLY";
+const PLAYLIST_ID = "PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_";
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,9 +10,7 @@ const Reviews = () => {
   const [visibleTestimonials, setVisibleTestimonials] = useState(4);
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  const totalTestimonials = testimonials.length;
-
-  // Dynamically set how many testimonials to show based on screen width
+  const [videoIds, setVideoIds] = useState<string[]>([]);
   useEffect(() => {
     const updateVisibleTestimonials = () => {
       const width = window.innerWidth;
@@ -30,16 +29,18 @@ const Reviews = () => {
       window.removeEventListener("resize", updateVisibleTestimonials);
   }, []);
 
+  const totalTestimonials = videoIds.length;
+
   const nextSlide = () => {
-    if (isTransitioning) return;
+    if (isTransitioning || totalTestimonials === 0) return;
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) =>
-      prevIndex === totalTestimonials - visibleTestimonials ? 0 : prevIndex + 1
+      prevIndex >= totalTestimonials - visibleTestimonials ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
-    if (isTransitioning) return;
+    if (isTransitioning || totalTestimonials === 0) return;
     setIsTransitioning(true);
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? totalTestimonials - visibleTestimonials : prevIndex - 1
@@ -53,15 +54,43 @@ const Reviews = () => {
     return () => clearTimeout(timer);
   }, [currentIndex]);
 
-  const handleCardClick = (youtubeUrl: string) => {
-    window.open(youtubeUrl, "_blank");
+  useEffect(() => {
+    async function fetchPlaylistVideos(pageToken = "") {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}&pageToken=${pageToken}`
+        );
+        const data = await response.json();
+
+        if (data.error) {
+          console.error("YouTube API error:", data.error.message);
+          return;
+        }
+
+        const ids = data.items.map((item: any) => item.contentDetails.videoId);
+
+        setVideoIds((prev) => [...prev, ...ids]);
+
+        if (data.nextPageToken) {
+          fetchPlaylistVideos(data.nextPageToken);
+        }
+      } catch (error) {
+        console.error("Fetch playlist videos failed:", error);
+      }
+    }
+
+    fetchPlaylistVideos();
+  }, []);
+
+  const handleCardClick = (videoId: string) => {
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
   };
 
   return (
     <div className="w-full py-16 px-4 bg-gradient-to-b from-pink-100 via-purple-50 to-white text-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-[#262C33]">
-          আমাদের সফলতার গল্প
+          স্টুডেন্টদের ড্রিম জব জয় করার জার্নি
         </h2>
 
         <div className="relative">
@@ -75,47 +104,21 @@ const Reviews = () => {
                 }%)`,
               }}
             >
-              {testimonials.map((testimonial) => (
+              {videoIds.map((videoId, index) => (
                 <div
-                  key={testimonial.id}
+                  key={videoId}
                   className="w-full sm:w-1/2 lg:w-1/4 px-3 transition-transform duration-300 hover:scale-105 cursor-pointer"
-                  onClick={() => handleCardClick(testimonial.youtubeUrl)}
+                  onClick={() => handleCardClick(videoId)}
                 >
-                  <div className="bg-gradient-to-b from-black/80 to-purple-900/80 rounded-lg p-6 h-full flex flex-col">
-                    <div className="mb-4">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-full h-48 object-cover rounded-md"
-                      />
-                    </div>
-                    <div className="flex items-center mb-2">
-                      <span className="text-2xl mr-2">"</span>
-                      <div className="flex ml-auto">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={cn(
-                              "w-4 h-4",
-                              i < testimonial.rating
-                                ? "fill-yellow-400 text-yellow-400"
-                                : "text-gray-400"
-                            )}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-sm mb-4">{testimonial.quote}</p>
-                    <div className="mt-auto flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-gray-300 mr-3" />
-                      <div>
-                        <p className="font-semibold">{testimonial.name}</p>
-                        <p className="text-xs text-gray-300">
-                          {testimonial.title}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    width="100%"
+                    height="200"
+                    title={`YouTube video ${index + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-lg shadow-md"
+                  ></iframe>
                 </div>
               ))}
             </div>

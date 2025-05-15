@@ -1,5 +1,3 @@
-import type { Testimonial } from "./interface";
-
 export const courseData = [
   {
     id: "milestone-1",
@@ -101,75 +99,72 @@ export const courseData = [
 ];
 //reviews data
 
-export const testimonials: Testimonial[] = [
+export const testimonials: { id: string; youtubeUrl: string }[] = [
   {
     id: "1",
-    name: "Tonmoy Sarkar",
-    title: "Senior Visualizer",
-    quote:
-      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
-    rating: 5,
-    image: "/placeholder.svg?height=300&width=300",
-    youtubeUrl: "https://www.youtube.com/watch?v=example1",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=ID8g1_bTTgc&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=1",
   },
   {
     id: "2",
-    name: "Tonmoy Sarkar",
-    title: "Senior Visualizer",
-    quote:
-      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
-    rating: 5,
-    image: "/placeholder.svg?height=300&width=300",
-    youtubeUrl: "https://www.youtube.com/watch?v=example2",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=SL0az0RBXCA&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=2",
   },
   {
     id: "3",
-    name: "Tonmoy Sarkar",
-    title: "Senior Visualizer",
-    quote:
-      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
-    rating: 5,
-    image: "/placeholder.svg?height=300&width=300",
-    youtubeUrl: "https://www.youtube.com/watch?v=example3",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=SH8VxZcY04g&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=3",
   },
   {
     id: "4",
-    name: "Tonmoy Sarkar",
-    title: "Senior Visualizer",
-    quote:
-      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
-    rating: 5,
-    image: "/placeholder.svg?height=300&width=300",
-    youtubeUrl: "https://www.youtube.com/watch?v=example4",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF04&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=4",
   },
   {
-    id: "4",
-    name: "Tonmoy Sarkar",
-    title: "Senior Visualizer",
-    quote:
-      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
-    rating: 5,
-    image: "/placeholder.svg?height=300&width=300",
-    youtubeUrl: "https://www.youtube.com/watch?v=example4",
+    id: "5",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF05&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=5",
   },
   {
-    id: "4",
-    name: "Tonmoy Sarkar",
-    title: "Senior Visualizer",
-    quote:
-      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
-    rating: 5,
-    image: "/placeholder.svg?height=300&width=300",
-    youtubeUrl: "https://www.youtube.com/watch?v=example4",
+    id: "6",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF06&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=6",
   },
   {
-    id: "4",
-    name: "Tonmoy Sarkar",
-    title: "Senior Visualizer",
-    quote:
-      "সার্ভার সম্পর্কে ধারণা, REST API কল করে JSON ডাটা লোড করা, node, mongodb (database), chrome devtool নিয়ে ডিটেইলস সম্পর্কে ধারণা দেয়া হয়।",
-    rating: 5,
-    image: "/placeholder.svg?height=300&width=300",
-    youtubeUrl: "https://www.youtube.com/watch?v=example4",
+    id: "7",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF07&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=7",
+  },
+  {
+    id: "8",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF08&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=8",
+  },
+  {
+    id: "9",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF09&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=9",
+  },
+  {
+    id: "10",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF10&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=10",
+  },
+  {
+    id: "11",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF11&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=11",
+  },
+  {
+    id: "12",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF12&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=12",
+  },
+  {
+    id: "13",
+    youtubeUrl:
+      "https://www.youtube.com/watch?v=abc123DEF13&list=PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_&index=13",
   },
 ];
+//
+// AIzaSyBp7konpZH5jUEnlbPhmoTuGt9JJ3_XzLY

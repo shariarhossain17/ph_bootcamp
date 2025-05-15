@@ -4,7 +4,7 @@ const Success = () => {
     <div>
       <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 justify-center items-center py-32 ">
         {/* First Card  */}
-        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm">
+        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm w-[340px] h-[172px]">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-teal-400 flex items-center justify-center relative">
               <Globe className="w-6 h-6 text-white" />
@@ -14,23 +14,25 @@ const Success = () => {
           </div>
           <div className="text-5xl font-bold text-teal-400">8,600+</div>
           <div className="text-gray-700 mt-1 text-center">
-            জব সেগমেন্ট বিশ্ববাসী
+            জব প্লেসমেন্ট বিশ্বব্যাপি
           </div>
         </div>
 
         {/* Second Card */}
-        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm">
+        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm  w-[340px] h-[172px]">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center">
               <Building2 className="w-6 h-6 text-white" />
             </div>
           </div>
           <div className="text-5xl font-bold text-blue-400">2,280+</div>
-          <div className="text-gray-700 mt-1 text-center">কোম্পানি যুক্ত</div>
+          <div className="text-gray-700 mt-1 text-center">
+            পার্টনার কোম্পানি
+          </div>
         </div>
 
         {/* Third Card */}
-        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm">
+        <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm  w-[340px] h-[172px]">
           <div className="w-12 h-12 mb-4">
             <div className="w-12 h-12 rounded-full bg-gradient-to-r from-red-400 to-orange-400 flex items-center justify-center">
               <Users className="w-6 h-6 text-white" />
@@ -40,7 +42,7 @@ const Success = () => {
             86+
           </div>
           <div className="text-gray-700 mt-1 text-center">
-            জব সেগমেন্ট এক্টিভিকিউট
+            ডেডিকেটেড সাপোর্ট মেম্বার
           </div>
         </div>
       </div>
