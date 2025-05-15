@@ -25,9 +25,9 @@ const Footer = () => {
               <div className="space-y-3 text-gray-200">
                 <div className="flex items-start space-x-2">
                   <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                  <span>Level-4, 34, Awal Centre, Banani, Dhaka</span>
+                  <span>লেভেল-৪, ৩৪,আওয়াল সেন্টার, বনানী, ঢাকা</span>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 font-serif">
                   <Mail className="h-5 w-5 flex-shrink-0" />
                   <a
                     href="mailto:web@programming-hero.com"
