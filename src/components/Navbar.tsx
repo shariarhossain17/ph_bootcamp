@@ -6,7 +6,9 @@ const Navbar = () => {
     <div className="px-12 py-4 sticky top-0 z-50">
       <nav className="flex items-center justify-between">
         <div>
-          <img className="w-[207px]" src={logo} alt="" />
+          <Link to="/">
+            <img className="w-[207px]" src={logo} alt="" />
+          </Link>
         </div>
         <div className="flex gap-6 items-center">
           <Link
@@ -15,9 +17,11 @@ const Navbar = () => {
           >
             বুটক্যাম্প ক্লাস
           </Link>
-          <li className="list-none text-[#262C33] text-[16px] font-medium">
-            কোর্স{" "}
-          </li>
+          <a href="https://web.programming-hero.com/home">
+            <li className="list-none text-[#262C33] text-[16px] font-medium">
+              কোর্স{" "}
+            </li>
+          </a>
         </div>
       </nav>
     </div>

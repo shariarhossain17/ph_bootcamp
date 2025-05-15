@@ -1,4 +1,4 @@
-import { CheckCircle2, ChevronDown, Play } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import React from "react";
 import type { MilestoneData } from "../lib/interface";
 import { cn } from "../lib/utils";
@@ -23,19 +23,17 @@ const Milestone: React.FC<Props> = ({
   activeVideo,
 }) => {
   return (
-    <div className="border-b border-zinc-800">
+    <div className="mb-4 bg-[#181021] rounded-[20px] mt-4">
       <button
         onClick={() => toggleMilestone(milestone.id)}
         className="flex items-center justify-between w-full p-4 text-left hover:bg-zinc-800/50"
       >
         <div className="flex-1">
-          <h2 className="text-lg font-semibold text-purple-400">
+          <h2 className="text-lg font-semibold text-white">
             {milestone?.title}
           </h2>
           <div className="flex items-center text-sm text-zinc-400 mt-1">
             <span>{milestone?.duration}</span>
-            <span className="mx-2">•</span>
-            <span>{milestone?.progress}</span>
           </div>
         </div>
         <ChevronDown
@@ -47,7 +45,7 @@ const Milestone: React.FC<Props> = ({
       </button>
 
       {expandedMilestones[milestone.id] && (
-        <div className="pl-4 border-t border-zinc-800">
+        <div className=" border-t border-zinc-800 rounded-[20px] mt-4 mb-4">
           {milestone.modules.map((module) => (
             <div
               key={module.id}
@@ -61,8 +59,6 @@ const Milestone: React.FC<Props> = ({
                   <h3 className="font-medium">{module.title}</h3>
                   <div className="flex items-center text-sm text-zinc-400 mt-1">
                     <span>{module.duration}</span>
-                    <span className="mx-2">•</span>
-                    <span>{module.progress}</span>
                   </div>
                 </div>
                 <ChevronDown
@@ -81,16 +77,16 @@ const Milestone: React.FC<Props> = ({
                       onClick={() => handleVideoClick(video.youtubeId)}
                       className={cn(
                         "flex items-start w-full p-3 text-left hover:bg-zinc-800/30 rounded-md my-1",
-                        activeVideo === video.youtubeId ? "bg-zinc-800/50" : ""
+                        activeVideo === video.youtubeId ? "bg-[#F507F11A]" : ""
                       )}
                     >
-                      <div className="flex-shrink-0 mt-1 mr-3">
+                      {/* <div className="flex-shrink-0 mt-1 mr-3">
                         {video.completed ? (
                           <CheckCircle2 className="w-5 h-5 text-green-500" />
                         ) : (
                           <Play className="w-5 h-5 text-zinc-400" />
                         )}
-                      </div>
+                      </div> */}
                       <div className="flex-1 text-sm">
                         <p className="text-left">{video.title}</p>
                         {video.duration && (
