@@ -38,23 +38,23 @@ const Banner = () => {
             এখনই জয়েন করো
           </Link>
 
-          <div className="mt-12 relative bg-white rounded-lg p-4 shadow-lg max-w-3xl mx-auto hidden md:block">
-            {/* Left Side Icons with custom gaps */}
-            <div className="absolute left-[-90px] top-0 animate-pulse">
+          <div className="mt-12 relative bg-white rounded-lg p-4 shadow-lg max-w-3xl mx-auto ">
+            {/* Left Side Icons  */}
+            <div className="absolute left-[-90px] top-0 animate-pulse hidden md:block">
               <img
                 className="w-10 h-10 opacity-80"
                 src={htmlIcon2}
                 alt="HTML Icon"
               />
             </div>
-            <div className="absolute left-[-70px] top-[50%] animate-bounce">
+            <div className="absolute left-[-70px] top-[50%] animate-bounce hidden md:block">
               <img
                 className="w-10 h-10 opacity-80"
                 src={htmlIcon}
                 alt="HTML Icon"
               />
             </div>
-            <div className="absolute left-[-80px] bottom-0 animate-pulse">
+            <div className="absolute left-[-80px] bottom-0 animate-pulse hidden md:block">
               <img
                 className="w-10 h-10 opacity-80"
                 src={cssIcon}
@@ -63,14 +63,14 @@ const Banner = () => {
             </div>
 
             {/* Right Side Icons */}
-            <div className="absolute -right-20 top-1/3 animate-pulse">
+            <div className="absolute -right-20 top-1/3 animate-pulse hidden md:block">
               <img
                 className="w-10 h-10 opacity-80"
                 src={jsIcon}
                 alt="JS Icon"
               />
             </div>
-            <div className="absolute -right-16 bottom-1/3 animate-bounce">
+            <div className="absolute -right-16 bottom-1/3 animate-bounce hidden md:block">
               <img
                 className="w-10 h-10 opacity-80"
                 src={cssIcon2}
