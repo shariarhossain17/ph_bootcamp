@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import { useVideoNavigation } from "../../hooks/useNavigation";
 import { checkIsFirstVideo, checkIsLastVideo } from "../../lib/buttonDisable";
 import { courseData } from "../../lib/data";
+import "./Bootcamp.css"; // Import the CSS file for scrollbars
 
 const Bootcamp = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
@@ -13,6 +14,7 @@ const Bootcamp = () => {
   const [expandedModules, setExpandedModules] = useState<
     Record<string, boolean>
   >({});
+
   const { handlePrevious, handleNext, currentInfo } = useVideoNavigation({
     courseData,
     activeVideo,
@@ -68,17 +70,17 @@ const Bootcamp = () => {
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                  ></iframe>
+                  />
                 </div>
 
                 <div className="mt-6 flex justify-between">
                   <button
                     onClick={handlePrevious}
                     disabled={isFirst}
-                    className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${
+                    className={`px-6 py-2 rounded-md transition-colors  ${
                       isFirst
                         ? "bg-zinc-700 cursor-not-allowed"
-                        : "bg-zinc-800 hover:bg-zinc-700"
+                        : "bg-zinc-800 hover:bg-zinc-700 cursor-pointer"
                     }`}
                   >
                     Previous
@@ -86,10 +88,10 @@ const Bootcamp = () => {
                   <button
                     onClick={handleNext}
                     disabled={isLast}
-                    className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${
+                    className={`px-6 py-2 rounded-md transition-colors ${
                       isLast
                         ? "bg-purple-400 cursor-not-allowed"
-                        : "bg-purple-600 hover:bg-purple-700"
+                        : "bg-purple-600 hover:bg-purple-700 cursor-pointer"
                     }`}
                   >
                     Next
@@ -112,23 +114,29 @@ const Bootcamp = () => {
         </div>
 
         {/* Sidebar Section */}
-        <div className="w-full md:w-96 bg-[#151922] border-t md:border-t-0 md:border-r border-zinc-800 order-2 md:order-1">
-          <div className="p-4 border-b border-zinc-800">
+        <div
+          className="w-full md:w-96 bg-[#151922] border-t md:border-t-0 md:border-r border-zinc-800 order-2 md:order-1 flex flex-col"
+          style={{ height: "calc(100vh - 75px)" }}
+        >
+          <div className="p-4 border-b border-zinc-800 shrink-0">
             <h1 className="text-xl font-bold">Course Content</h1>
           </div>
-          <div className="divide-y divide-zinc-800 max-h-[100vh] overflow-y-scroll">
-            {courseData.map((milestone) => (
-              <Milestone
-                key={milestone.id}
-                milestone={milestone}
-                toggleMilestone={toggleMilestone}
-                toggleModule={toggleModule}
-                handleVideoClick={handleVideoClick}
-                expandedMilestones={expandedMilestones}
-                expandedModules={expandedModules}
-                activeVideo={activeVideo}
-              />
-            ))}
+
+          <div className="relative group flex-1 overflow-hidden">
+            <div className="overflow-y-hidden group-hover:overflow-y-auto scroll-on-hover h-full divide-y divide-zinc-800 pr-1">
+              {courseData.map((milestone) => (
+                <Milestone
+                  key={milestone.id}
+                  milestone={milestone}
+                  toggleMilestone={toggleMilestone}
+                  toggleModule={toggleModule}
+                  handleVideoClick={handleVideoClick}
+                  expandedMilestones={expandedMilestones}
+                  expandedModules={expandedModules}
+                  activeVideo={activeVideo}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,32 @@
+.scroll-on-hover::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+  background: transparent;
+}
+
+.scroll-on-hover:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.scroll-on-hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-on-hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-on-hover:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.scroll-on-hover {
+  scrollbar-width: none;
+}
+
+.scroll-on-hover:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
