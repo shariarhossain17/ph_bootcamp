@@ -26,7 +26,11 @@ const Banner = () => {
               </span>
             </h1>
 
-            <Marquee className="text-[#262C33]AdorNoirrit.ttfAdorNoirrit.ttf">
+            <Marquee
+              className="text-[#262C33] font-adornoirrit"
+              speed={100}
+              pauseOnHover={true}
+            >
               প্রোগ্রামিং ওয়েব ডেভেলপমেন্ট বুটক্যাম্পর ১২ তম ব্যাচের ইনরোলমেন্ট
               শুরু ১০ই জুন থেকে এবং ইনরোলমেন্ট শেষ ২৪ ই জুন রাত ১১ টা ৫৯ মিনিটে
             </Marquee>
