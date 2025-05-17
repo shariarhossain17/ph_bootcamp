@@ -6,6 +6,7 @@ import cssIcon2 from "../assets/logo/icons8-css-64.png";
 import htmlIcon from "../assets/logo/icons8-html-48.png";
 import htmlIcon2 from "../assets/logo/icons8-html-50.png";
 import jsIcon from "../assets/logo/icons8-javascript-48.png";
+import { slideText } from "../config/bannerText";
 
 const Banner = () => {
   return (
@@ -31,8 +32,7 @@ const Banner = () => {
               speed={100}
               pauseOnHover={true}
             >
-              প্রোগ্রামিং ওয়েব ডেভেলপমেন্ট বুটক্যাম্পর ১২ তম ব্যাচের ইনরোলমেন্ট
-              শুরু ১০ই জুন থেকে এবং ইনরোলমেন্ট শেষ ২৪ ই জুন রাত ১১ টা ৫৯ মিনিটে
+              {slideText}
             </Marquee>
 
             {/* Join Button */}

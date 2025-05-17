@@ -1,8 +1,13 @@
 import { Building2, Globe, Users } from "lucide-react";
+import {
+  jobPlacement,
+  partnerCompany,
+  supportMember,
+} from "../config/successText";
 const Success = () => {
   return (
-    <div>
-      <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 justify-center items-center py-32 ">
+    <div className="bg-gray-100">
+      <div className="flex flex-col md:flex-row gap-4 p-4  justify-center items-center py-32 ">
         {/* First Card  */}
         <div className="bg-white rounded-xl p-6 flex flex-col items-center shadow-sm w-[350px] h-[172px]">
           <div className="w-12 h-12 mb-4">
@@ -12,7 +17,9 @@ const Success = () => {
               <div className="absolute w-2 h-2 bg-red-500 rounded-full bottom-2 left-0 border border-white"></div>
             </div>
           </div>
-          <div className="text-5xl font-bold text-teal-400">৮৬০০+</div>
+          <div className="text-5xl font-bold text-teal-400">
+            {jobPlacement}+
+          </div>
           <div className="text-gray-700 mt-1 text-center">
             জব প্লেসমেন্ট বিশ্বব্যাপি
           </div>
@@ -25,7 +32,9 @@ const Success = () => {
               <Building2 className="w-6 h-6 text-white" />
             </div>
           </div>
-          <div className="text-5xl font-bold text-blue-400">২২৮০+</div>
+          <div className="text-5xl font-bold text-blue-400">
+            {partnerCompany}+
+          </div>
           <div className="text-gray-700 mt-1 text-center">
             পার্টনার কোম্পানি
           </div>
@@ -39,7 +48,7 @@ const Success = () => {
             </div>
           </div>
           <div className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-orange-400">
-            ৮৬+
+            {supportMember}+
           </div>
           <div className="text-gray-700 mt-1 text-center">
             ডেডিকেটেড সাপোর্ট মেম্বার
