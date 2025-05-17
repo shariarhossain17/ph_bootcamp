@@ -16,7 +16,8 @@ export const courseData = [
             title:
               "Text instruction [important]: Module 1: Learn and Explore HTML",
             completed: true,
-            youtubeId: "pQN-pnXPaVg",
+            youtubeId:
+              "https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd",
           },
           {
             id: "video-1-1-2",
