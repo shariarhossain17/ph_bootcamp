@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react"; // Make sure you have lucide-react installed
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 import logo from "../assets/logo/PH-Logo-Dark.png";
