@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import { useVideoNavigation } from "../../hooks/useNavigation";
 import { checkIsFirstVideo, checkIsLastVideo } from "../../lib/buttonDisable";
 import { courseData } from "../../lib/data";
-import "./Bootcamp.css"; // Import the CSS file for scrollbars
+import "./Bootcamp.css";
 
 const Bootcamp = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
