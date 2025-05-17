@@ -24,9 +24,10 @@ const Milestone: React.FC<Props> = ({
 }) => {
   return (
     <div className="mb-4 bg-[#151922] rounded-[20px] mt-4">
+      {/* Milestone Header */}
       <button
         onClick={() => toggleMilestone(milestone.id)}
-        className="flex items-center justify-between w-full p-4 text-left hover:bg-zinc-800/50"
+        className="flex items-center justify-between w-full p-4 text-left hover:bg-zinc-800/50 cursor-pointer"
       >
         <div className="flex-1">
           <h2 className="text-lg font-semibold text-white">
@@ -44,8 +45,9 @@ const Milestone: React.FC<Props> = ({
         />
       </button>
 
+      {/* Modules */}
       {expandedMilestones[milestone.id] && (
-        <div className=" border-t border-zinc-800 rounded-[20px] mt-4 mb-4">
+        <div className="border-t border-zinc-800 rounded-[20px] mt-4 mb-4">
           {milestone.modules.map((module) => (
             <div
               key={module.id}
@@ -53,7 +55,7 @@ const Milestone: React.FC<Props> = ({
             >
               <button
                 onClick={() => toggleModule(module.id)}
-                className="flex items-center justify-between w-full p-4 text-left hover:bg-zinc-800/50"
+                className="flex items-center justify-between w-full p-4 text-left hover:bg-zinc-800/50 cursor-pointer"
               >
                 <div className="flex-1">
                   <h3 className="font-medium">{module.title}</h3>
@@ -69,6 +71,7 @@ const Milestone: React.FC<Props> = ({
                 />
               </button>
 
+              {/* Videos */}
               {expandedModules[module.id] && (
                 <div className="pl-4 pb-2">
                   {module.videos.map((video) => (
@@ -76,17 +79,10 @@ const Milestone: React.FC<Props> = ({
                       key={video.id}
                       onClick={() => handleVideoClick(video.youtubeId)}
                       className={cn(
-                        "flex items-start w-full p-3 text-left hover:bg-zinc-800/30 rounded-md my-1",
+                        "flex items-start w-full p-3 text-left hover:bg-zinc-800/30 rounded-md my-1 cursor-pointer",
                         activeVideo === video.youtubeId ? "bg-[#F507F11A]" : ""
                       )}
                     >
-                      {/* <div className="flex-shrink-0 mt-1 mr-3">
-                        {video.completed ? (
-                          <CheckCircle2 className="w-5 h-5 text-green-500" />
-                        ) : (
-                          <Play className="w-5 h-5 text-zinc-400" />
-                        )}
-                      </div> */}
                       <div className="flex-1 text-sm">
                         <p className="text-left">{video.title}</p>
                         {video.duration && (
