@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import type { MilestoneData } from "../lib/interface";
 import { findCurrentVideoInfo } from "../lib/videoNavigation";
 
@@ -21,8 +21,12 @@ export const useVideoNavigation = ({
   setExpandedModules,
   setExpandedMilestones,
 }: UseVideoNavigationProps) => {
+  const currentInfo = useMemo(
+    () => findCurrentVideoInfo(courseData, activeVideo),
+    [courseData, activeVideo]
+  );
+
   const handlePrevious = useCallback(() => {
-    const currentInfo = findCurrentVideoInfo(courseData, activeVideo);
     if (!currentInfo) return;
 
     const { videoIndex, module, moduleId, milestoneId } = currentInfo;
@@ -62,15 +66,14 @@ export const useVideoNavigation = ({
       }
     }
   }, [
+    currentInfo,
     courseData,
-    activeVideo,
     setActiveVideo,
     setExpandedModules,
     setExpandedMilestones,
   ]);
 
   const handleNext = useCallback(() => {
-    const currentInfo = findCurrentVideoInfo(courseData, activeVideo);
     if (!currentInfo) return;
 
     const { videoIndex, module, moduleId, milestoneId } = currentInfo;
@@ -109,12 +112,12 @@ export const useVideoNavigation = ({
       }
     }
   }, [
+    currentInfo,
     courseData,
-    activeVideo,
     setActiveVideo,
     setExpandedModules,
     setExpandedMilestones,
   ]);
 
-  return { handlePrevious, handleNext };
+  return { handlePrevious, handleNext, currentInfo };
 };

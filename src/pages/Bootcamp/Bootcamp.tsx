@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Milestone from "../../components/Milestone";
 import Navbar from "../../components/Navbar";
 import { useVideoNavigation } from "../../hooks/useNavigation";
+import { checkIsFirstVideo, checkIsLastVideo } from "../../lib/buttonDisable";
 import { courseData } from "../../lib/data";
 
 const Bootcamp = () => {
@@ -12,14 +13,25 @@ const Bootcamp = () => {
   const [expandedModules, setExpandedModules] = useState<
     Record<string, boolean>
   >({});
-
-  const { handlePrevious, handleNext } = useVideoNavigation({
+  const { handlePrevious, handleNext, currentInfo } = useVideoNavigation({
     courseData,
     activeVideo,
     setActiveVideo,
     setExpandedModules,
     setExpandedMilestones,
   });
+
+  const isFirst = useMemo(() => {
+    if (!currentInfo) return true;
+    const { milestoneId, moduleId, videoIndex } = currentInfo;
+    return checkIsFirstVideo(courseData, milestoneId, moduleId, videoIndex);
+  }, [currentInfo]);
+
+  const isLast = useMemo(() => {
+    if (!currentInfo) return true;
+    const { milestoneId, moduleId, videoIndex } = currentInfo;
+    return checkIsLastVideo(courseData, milestoneId, moduleId, videoIndex);
+  }, [currentInfo]);
 
   const toggleMilestone = (id: string) => {
     setExpandedMilestones((prev) => ({
@@ -45,10 +57,10 @@ const Bootcamp = () => {
       <div className="flex flex-col md:flex-row min-h-[92vh] bg-[#010127] text-white px-4 md:px-12">
         {/* Video Section */}
         <div className="flex-1 order-1 md:order-2 flex justify-center p-4 md:p-8">
-          <div className="w-full md:w-full max-w-4xl ">
+          <div className="w-full md:w-full max-w-4xl">
             {activeVideo ? (
               <>
-                <div className="relative pb-[56.25%]  overflow-hidden rounded-lg shadow-lg h-[70vh]">
+                <div className="relative pb-[56.25%] overflow-hidden rounded-lg shadow-lg h-[70vh]">
                   <iframe
                     src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
                     className="absolute top-0 left-0 w-full h-full"
@@ -62,13 +74,23 @@ const Bootcamp = () => {
                 <div className="mt-6 flex justify-between">
                   <button
                     onClick={handlePrevious}
-                    className="px-6 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-md transition-colors cursor-pointer"
+                    disabled={isFirst}
+                    className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${
+                      isFirst
+                        ? "bg-zinc-700 cursor-not-allowed"
+                        : "bg-zinc-800 hover:bg-zinc-700"
+                    }`}
                   >
                     Previous
                   </button>
                   <button
                     onClick={handleNext}
-                    className="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-md transition-colors cursor-pointer"
+                    disabled={isLast}
+                    className={`px-6 py-2 rounded-md transition-colors cursor-pointer ${
+                      isLast
+                        ? "bg-purple-400 cursor-not-allowed"
+                        : "bg-purple-600 hover:bg-purple-700"
+                    }`}
                   >
                     Next
                   </button>
@@ -94,7 +116,7 @@ const Bootcamp = () => {
           <div className="p-4 border-b border-zinc-800">
             <h1 className="text-xl font-bold">Course Content</h1>
           </div>
-          <div className="divide-y divide-zinc-800 max-h-[70vh] overflow-y-scroll">
+          <div className="divide-y divide-zinc-800 max-h-[100vh] overflow-y-scroll">
             {courseData.map((milestone) => (
               <Milestone
                 key={milestone.id}
