@@ -56,13 +56,19 @@ const Bootcamp = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col md:flex-row min-h-[92vh] bg-[#010127] text-white px-4 md:px-12">
+      <div
+        className="flex flex-col md:flex-row bg-[#010127] text-white mx-auto"
+        style={{ minHeight: "calc(100vh - 75px)" }}
+      >
         {/* Video Section */}
-        <div className="flex-1 order-1 md:order-2 flex justify-center p-4 md:p-8">
+        <div className="flex-1 order-1 md:order-2 flex justify-center items-center p-4 md:px-4 md:py-8 min-h-[70vh]">
           <div className="w-full md:w-full max-w-4xl">
             {activeVideo ? (
               <>
-                <div className="relative pb-[56.25%] overflow-hidden rounded-lg shadow-lg h-[70vh]">
+                <div
+                  className="relative pb-[56.25%] overflow-hidden rounded-lg shadow-lg"
+                  style={{ height: 0 }}
+                >
                   <iframe
                     src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
                     className="absolute top-0 left-0 w-full h-full"
@@ -77,7 +83,7 @@ const Bootcamp = () => {
                   <button
                     onClick={handlePrevious}
                     disabled={isFirst}
-                    className={`px-6 py-2 rounded-md transition-colors  ${
+                    className={`px-6 py-2 rounded-md transition-colors ${
                       isFirst
                         ? "bg-zinc-700 cursor-not-allowed"
                         : "bg-zinc-800 hover:bg-zinc-700 cursor-pointer"
@@ -118,8 +124,11 @@ const Bootcamp = () => {
           className="w-full md:w-96 bg-[#151922] border-t md:border-t-0 md:border-r border-zinc-800 order-2 md:order-1 flex flex-col"
           style={{ height: "calc(100vh - 75px)" }}
         >
-          <div className="p-4 border-b border-zinc-800 shrink-0">
-            <h1 className="text-xl font-bold">Course Content</h1>
+          {/* Updated header container for alignment */}
+          <div className="border-b border-zinc-800 shrink-0">
+            <div className="px-6 md:px-12 lg:px-16 max-w-[1600px] mx-auto py-4">
+              <h1 className="text-xl font-bold">Course Content</h1>
+            </div>
           </div>
 
           <div className="relative group flex-1 overflow-hidden">

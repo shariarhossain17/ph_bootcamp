@@ -12,6 +12,13 @@ const Navbar = () => {
     <>
       <Link
         className="text-[#262C33] text-[16px] font-medium"
+        to="/"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        হোম
+      </Link>
+      <Link
+        className="text-[#262C33] text-[16px] font-medium"
         to="/bootcamp"
         onClick={() => setIsMenuOpen(false)}
       >
@@ -42,9 +49,9 @@ const Navbar = () => {
   );
 
   return (
-    <div className="sticky top-0 z-50 bg-white shadow">
-      <div className="px-6 md:px-12 lg:px-16 py-4  custom-ador-font max-w-[1600px] mx-auto">
-        <nav className="flex items-center justify-between ">
+    <div className="sticky top-0 z-50 bg-white shadow" style={{ height: 75 }}>
+      <div className="px-6 md:px-12 lg:px-16 py-4 custom-ador-font  mx-auto h-full flex items-center justify-between">
+        <nav className="flex items-center justify-between w-full">
           <div>
             <Link to="/">
               <img
