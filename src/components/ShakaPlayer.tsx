@@ -17,19 +17,18 @@ const ShakaPlayer = ({ activeVideo }: { activeVideo: string | null }) => {
 
     const player = new shaka.Player(video);
 
-    player.addEventListener("error", (event) => {
+    player.addEventListener("error", (event: any) => {
       console.error("Error code", event.detail.code, ":", event.detail);
     });
 
     player
       .load(activeVideo)
       .then(() => {
-        console.log("The video has been loaded!");
         video.play().catch((e) => {
           console.warn("Play prevented:", e);
         });
       })
-      .catch((err) => {
+      .catch((err: any) => {
         console.error("Error loading video:", err);
       });
 
