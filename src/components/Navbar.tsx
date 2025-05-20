@@ -49,38 +49,45 @@ const Navbar = () => {
   );
 
   return (
-    <div className="sticky top-0 z-50 bg-white shadow" style={{ height: 75 }}>
-      <div className="px-6 md:px-12 lg:px-16 py-4 custom-ador-font  mx-auto h-full flex items-center justify-between">
-        <nav className="flex items-center justify-between w-full">
-          <div>
-            <Link to="/">
-              <img
-                className="w-[100px] md:w-[207px]"
-                src={logo}
-                alt="PH Logo"
-              />
-            </Link>
-          </div>
+    <>
+      <div
+        className="fixed top-0 left-0 right-0 z-50 bg-white shadow"
+        style={{ height: 75 }}
+      >
+        <div className="px-6 md:px-12 lg:px-16 py-4 custom-ador-font mx-auto h-full flex items-center justify-between">
+          <nav className="flex items-center justify-between w-full">
+            <div>
+              <Link to="/">
+                <img
+                  className="w-[100px] md:w-[207px]"
+                  src={logo}
+                  alt="PH Logo"
+                />
+              </Link>
+            </div>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex gap-6 items-center">{navLinks}</div>
+            {/* Desktop Links */}
+            <div className="hidden md:flex gap-6 items-center">{navLinks}</div>
 
-          {/* Mobile Hamburger Icon */}
-          <div className="md:hidden">
-            <button onClick={toggleMenu}>
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </nav>
+            {/* Mobile Hamburger Icon */}
+            <div className="md:hidden">
+              <button onClick={toggleMenu}>
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </nav>
+        </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 flex flex-col gap-4 bg-white shadow p-4 rounded">
+          <div className="md:hidden fixed top-[75px] left-0 right-0 z-50 bg-white shadow p-4 rounded flex flex-col gap-4">
             {navLinks}
           </div>
         )}
       </div>
-    </div>
+
+      <div className="pt-[75px]"></div>
+    </>
   );
 };
 
