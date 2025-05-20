@@ -60,7 +60,7 @@ const Bootcamp = () => {
         className="flex flex-col md:flex-row bg-[#010127] text-white mx-auto"
         style={{ minHeight: "calc(100vh - 75px)" }}
       >
-        {/* Video Section */}
+        {/* Video Section iframe*/}
         <div className="flex-1 order-1 md:order-2 flex justify-center items-center p-4 md:px-4 md:py-8 min-h-[70vh]">
           <div className="w-full md:w-full max-w-4xl">
             {activeVideo ? (
