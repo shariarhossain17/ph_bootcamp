@@ -1,8 +1,10 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const API_KEY = "AIzaSyBp7konpZH5jUEnlbPhmoTuGt9JJ3_XzLY";
-const PLAYLIST_ID = "PL3Xso75sMgAG4o1_gMBqOet2vM_M5rbw_";
+const API_KEY = import.meta.env.VITE_API_KEY;
+const PLAYLIST_ID = import.meta.env.VITE_PLAYLIST_ID;
+
+console.log(API_KEY);
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
