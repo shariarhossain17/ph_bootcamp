@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from "react";
 const API_KEY = import.meta.env.VITE_API_KEY;
 const PLAYLIST_ID = import.meta.env.VITE_PLAYLIST_ID;
 
-console.log(API_KEY);
-
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
